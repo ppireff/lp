@@ -1377,10 +1377,13 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
     if (nHeight > 0 && nHeight <= 1) {
         nSubsidy = 245265 * COIN; // premine 
     }          
-    else if (nHeight > 1 && nHeight <= 100) {
-        nSubsidy = 1 * COIN;  // instamine prevention
+    else if (nHeight > 1 && nHeight <= 60) {
+        nSubsidy = 0 * COIN;  // premine confirm
+    }
+    else if (nHeight > 60 && nHeight <= 300) {
+        nSubsidy = 1 * COIN; // instamine prevention
     }            
-    else if (nHeight > 100 && nHeight <= 144 * 1000) {
+    else if (nHeight > 300 && nHeight <= 144 * 1000) {
         nSubsidy = 10 * COIN; // initial block reward
     }
     else if (nHeight > 144 * 1000 && nHeight <= 1000 * 1000) {
@@ -1402,10 +1405,10 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     int64_t nSubsidy = 0;
     int nHeight = pindexBest->nHeight;
 
-    if (nHeight > 1800 && nHeight <= 5760) {
-        nSubsidy = 10 * COIN;
+    if (nHeight > 300 && nHeight <= 2880) {
+        nSubsidy = 0 * COIN;
     }
-    else if (nHeight > 5760 && nHeight <= 144 * 1000) {
+    else if (nHeight > 2880 && nHeight <= 144 * 1000) {
         nSubsidy = (2.50 + 7.50) * COIN;
     }
     else if (nHeight > 144 * 1000 && nHeight <= 1000 * 1000) {
@@ -1422,7 +1425,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
 {
     int64_t ret = 0;
     
-    if (nHeight > 2060 && nHeight <= 144 * 1000) {
+    if (nHeight > 5760 && nHeight <= 144 * 1000) {
         ret = blockValue * 75 / 100;
     }
     else if (nHeight > 144 * 1000 && nHeight <= 1000 * 1000) {
