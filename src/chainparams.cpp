@@ -87,12 +87,12 @@ public:
         hashGenesisBlock = genesis.GetHash();
 
 
-        printf("%s\n", hashGenesisBlock.ToString().c_str());
-        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+//        printf("%s\n", hashGenesisBlock.ToString().c_str());
+//        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
 
 		
-        assert(hashGenesisBlock == uint256("455687a6c8f3073d68a3a015f32b8aa87f181d85daef1804674628d001358c74"));
-        assert(genesis.hashMerkleRoot == uint256("460ba39b2b7a41208ab8f6b2d7241d2d64fa4f6291a9a018b2cea3371a7b132c"));
+        assert(hashGenesisBlock == uint256("47b52ec188b6c24ba9e586e5aa594a1e50b3a5be3ff4832512cc9432557e5491"));
+        assert(genesis.hashMerkleRoot == uint256("ee1ddd4eb0bbf400414b46d838474ef15f4fafc03e8f380843937a86d1dd7d18"));
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,78);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,78);
