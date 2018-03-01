@@ -53,8 +53,8 @@ enum AvailableCoinsType
 {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
-    ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4
+    ONLY_NOT3333IFMN = 3,
+    ONLY_NONDENOMINATED_NOT3333IFMN = 4
 };
 
 /** A key pool entry */

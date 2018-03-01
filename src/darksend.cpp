@@ -1742,13 +1742,13 @@ bool CDarksendPool::MakeCollateralAmounts()
     int32_t nChangePos;
     // try to use non-denominated and not mn-like funds
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-            nFeeRet, nChangePos, strFail, coinControl, ONLY_NONDENOMINATED_NOT10000IFMN);
+            nFeeRet, nChangePos, strFail, coinControl, ONLY_NONDENOMINATED_NOT3333IFMN);
     if(!success){
         // if we failed (most likeky not enough funds), try to use denominated instead -
         // MN-like funds should not be touched in any case and we can't mix denominated without collaterals anyway
-        LogPrintf("MakeCollateralAmounts: ONLY_NONDENOMINATED_NOT1000IFMN Error - %s\n", strFail);
+        LogPrintf("MakeCollateralAmounts: ONLY_NONDENOMINATED_NOT3333IFMN Error - %s\n", strFail);
         success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-                nFeeRet, nChangePos, strFail, coinControl, ONLY_NOT10000IFMN);
+                nFeeRet, nChangePos, strFail, coinControl, ONLY_NOT3333IFMN);
         if(!success){
             LogPrintf("MakeCollateralAmounts: ONLY_NOT1000IFMN Error - %s\n", strFail);
             reservekeyCollateral.ReturnKey();
@@ -1829,7 +1829,7 @@ bool CDarksendPool::CreateDenominated(int64_t nTotalValue)
     CCoinControl *coinControl=NULL;
     int32_t nChangePos;
     bool success = pwalletMain->CreateTransaction(vecSend, wtx, reservekeyChange,
-            nFeeRet, nChangePos, strFail, coinControl, ONLY_NONDENOMINATED_NOT10000IFMN);
+            nFeeRet, nChangePos, strFail, coinControl, ONLY_NONDENOMINATED_NOT3333IFMN);
     if(!success){
         LogPrintf("CreateDenominated: Error - %s\n", strFail);
         // TODO: return reservekeyDenom here
