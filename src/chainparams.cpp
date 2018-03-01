@@ -59,11 +59,11 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xf1;
-        pchMessageStart[1] = 0xec;
-        pchMessageStart[2] = 0xa1;
-        pchMessageStart[3] = 0xc7;
-        vAlertPubKey = ParseHex("04ef0114c2f98ffa5ce31beddacec699e1b267888ec2f71ef4e78e007155d23ed38cf5836f8724e23c1dee43dbdefc7a9764f6d93044ced1c29404f35b10d46ea4");
+        pchMessageStart[0] = 0x6b;
+        pchMessageStart[1] = 0xfa;
+        pchMessageStart[2] = 0xe4;
+        pchMessageStart[3] = 0x7d;
+        vAlertPubKey = ParseHex("047557dfe27833869df7a8b8b3f75dab14cbd0e48590569f94a4b23f07ba71f4c46fede7d158689842856b678ec02ce414ef80548643d4bab57ab676d8216276cd");
         nDefaultPort = 13853;
         nRPCPort = 13854;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
@@ -87,8 +87,8 @@ public:
         hashGenesisBlock = genesis.GetHash();
 
 
-//        printf("%s\n", hashGenesisBlock.ToString().c_str());
-//        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+        printf("%s\n", hashGenesisBlock.ToString().c_str());
+        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
 
 		
         assert(hashGenesisBlock == uint256("47b52ec188b6c24ba9e586e5aa594a1e50b3a5be3ff4832512cc9432557e5491"));
@@ -140,14 +140,14 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x1f;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x05;
-        pchMessageStart[3] = 0x30;
+        pchMessageStart[0] = 0xf5;
+        pchMessageStart[1] = 0x2d;
+        pchMessageStart[2] = 0x0a;
+        pchMessageStart[3] = 0x06;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
-        vAlertPubKey = ParseHex("0488d4a6bf0e8a0389e904c6026915db6585ebce45d426ed90c2148d2aba7f34ebbd7cde6a85cb2d254d8ac20acf70fe4400885674402715cea1640cce13d027e9");
-        nDefaultPort = 13953;
-        nRPCPort = 13954;
+        vAlertPubKey = ParseHex("04e3a70eb22779e5a6bcd7ddfa7411b6932943d8706d1eadb95f30363362ee43b3045f09fbc049546f16659c6497d27edeabfea6c2b5ed3b7ce3b3aa1bca744f90");
+        nDefaultPort = 23953;
+        nRPCPort = 23954;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 8);
         strDataDir = "testnet";
 
