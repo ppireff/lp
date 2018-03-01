@@ -113,8 +113,8 @@ public:
         nPoolMaxTransactions = 3;
      
         strDarksendPoolDummyAddress = "9frEPbxv2ANZzrViEqTCWaBL8S63FQHz9s";
-        nLastPOWBlock = 2685000; // 5 years
-        nPOSStartBlock = 100;
+        nLastPOWBlock = 26850000; // 5 years
+        nPOSStartBlock = 300;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
