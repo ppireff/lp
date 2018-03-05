@@ -94,8 +94,8 @@ public:
         assert(hashGenesisBlock == uint256("47b52ec188b6c24ba9e586e5aa594a1e50b3a5be3ff4832512cc9432557e5491"));
         assert(genesis.hashMerkleRoot == uint256("ee1ddd4eb0bbf400414b46d838474ef15f4fafc03e8f380843937a86d1dd7d18"));
         
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,78);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,78);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,137); // Lowercase x - 137
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,137); // Lowercase x - 137
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,80);
         base58Prefixes[STEALTH_ADDRESS] = std::vector<unsigned char>(1,81);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
@@ -107,7 +107,7 @@ public:
         //vSeeds.push_back(CDNSSeedData("2","146.185.168.10"));
         //vSeeds.push_back(CDNSSeedData("3","188.226.192.182"));
         vSeeds.push_back(CDNSSeedData("0","79.124.17.202"));
-	vSeeds.push_back(CDNSSeedData("1","185.205.210.138"));
+	    vSeeds.push_back(CDNSSeedData("1","185.205.210.138"));
         convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
 
         nPoolMaxTransactions = 3;
